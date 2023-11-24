@@ -9,6 +9,7 @@ def get_valid_score():
             print("Invalid input. Please enter a valid numeric score.")
     return score
 
+
 def determine_score_status(score):
     if score < 0 or score > 100:
         return "Invalid score"
@@ -19,8 +20,10 @@ def determine_score_status(score):
     else:
         return "Bad"
 
+
 def print_stars(score):
     print("*" * int(score))
+
 
 def main():
     print("Welcome to the Score Menu!")
@@ -52,5 +55,6 @@ def main():
             print("Thank you for using the Score Menu. Goodbye!")
         else:
             print("Invalid option. Please choose a valid option.")
+
 
 main()
