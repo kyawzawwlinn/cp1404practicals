@@ -1,16 +1,13 @@
-# Constant dictionary of color names and their hexadecimal codes
-COLOR_CODES = {
-    "RED": "#ff0000",
-    "GREEN": "#00ff00",
-    "BLUE": "#0000ff",
-    "WHITE": "#ffffff",
-    "BLACK": "#000000",
-    "YELLOW": "#ffff00",
-    "CYAN": "#00ffff",
-    "MAGENTA": "#ff00ff",
-    "GRAY": "#808080",
-    "BROWN": "#a52a2a"
-}
+COLOR_CODES = {"RED": "#ff0000",
+               "GREEN": "#00ff00",
+               "BLUE": "#0000ff",
+               "WHITE": "#ffffff",
+               "BLACK": "#000000",
+               "YELLOW": "#ffff00",
+               "CYAN": "#00ffff",
+               "MAGENTA": "#ff00ff",
+               "GRAY": "#808080",
+               "BROWN": "#a52a2a"}
 
 
 def get_color_code(name_of_color):
