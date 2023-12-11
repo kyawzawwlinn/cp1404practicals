@@ -16,5 +16,4 @@ def main():
     print(f"{guitar2.name} is_vintage() - Expected False. Got {guitar2.is_vintage(2022)}")
 
 
-# Call the test_guitar_methods function explicitly
 main()

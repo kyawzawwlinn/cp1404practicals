@@ -1,6 +1,5 @@
-# guitars.py
-
 from guitar import Guitar
+
 
 def main():
     """Program that uses the Guitar class."""
@@ -24,6 +23,7 @@ def main():
             print(f"Guitar {i}: {guitar.name:>20} ({guitar.year}), worth ${guitar.cost:,.2f}{vintage_string}")
     else:
         print("You haven't added any guitars.")
+
 
 # Call the main function explicitly
 main()
