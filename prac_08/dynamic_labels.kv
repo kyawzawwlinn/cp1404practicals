@@ -1,0 +1,22 @@
+# dynamic_labels.kv
+BoxLayout:
+    orientation: 'vertical'
+
+    BoxLayout:
+        orientation: 'vertical'
+        # This layout is populated with Label widgets in app code
+        id: labels_box
+
+    Label:
+        size_hint_y: 0.1
+        text: app.status_text
+
+    BoxLayout:
+        orientation: 'horizontal'
+        size_hint_y: 0.2
+        Button:
+            text: "Create Labels"
+            on_press: app.create_labels()
+        Button:
+            text: "Clear Labels"
+            on_press: app.clear_all()
