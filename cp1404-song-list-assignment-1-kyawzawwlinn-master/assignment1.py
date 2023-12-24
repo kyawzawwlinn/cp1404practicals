@@ -1,8 +1,5 @@
-"""
-Name:Kyaw Zaww Linn
-Date started:18/12/23
-GitHub URL:
-"""
+"""Name:Kyaw Zaww Linn Date started:18/12/23 GitHub
+URL:https://github.com/kyawzawwlinn/cp1404practicals/tree/master/cp1404-song-list-assignment-1-kyawzawwlinn-master"""
 
 import csv
 
@@ -10,6 +7,7 @@ import csv
 SONGS_FILE = 'songs.csv'
 UNLEARNED = 'u'
 LEARNED = 'l'
+STATUS_INDEX = 3
 
 
 def load_songs():
@@ -33,25 +31,31 @@ def display_songs(song_list):
         return
 
     for i, song in enumerate(song_list, start=1):
-        status = '*' if song[3] == UNLEARNED else ''
-        print(f"{i}. {song[0]} - {song[1]} ({song[2]}) {status}")
+        status = '*' if song[STATUS_INDEX] == UNLEARNED else ''
+        plural_suffix = 's' if song[STATUS_INDEX] == UNLEARNED else ''
+        print(f"{i}. {song[0]} - {song[1]} ({song[2]}) {status} {plural_suffix}")
+
+
+def get_valid_year():
+    while True:
+        year = input("Year: ")
+        if year.isdigit() and int(year) > 0:
+            return int(year)
+        else:
+            print("Invalid input; enter a valid number.")
 
 
 def add_song(song_list):
     title = input("Title: ")
     artist = input("Artist: ")
-    year = input("Year: ")
-
-    while not year.isdigit() or int(year) <= 0:
-        print("Invalid input; enter a valid number.")
-        year = input("Year: ")
+    year = get_valid_year()
 
     song_list.append([title, artist, year, UNLEARNED])
     print(f"{title} by {artist} ({year}) added to the song list.")
 
 
 def complete_song(song_list):
-    unlearned_songs = [i for i, song in enumerate(song_list) if song[3] == UNLEARNED]
+    unlearned_songs = [i for i, song in enumerate(song_list) if song[STATUS_INDEX] == UNLEARNED]
 
     if not unlearned_songs:
         print("No more songs to learn!")
@@ -66,15 +70,22 @@ def complete_song(song_list):
 
     index = int(number) - 1
 
-    if song_list[index][3] == LEARNED:
+    if song_list[index][STATUS_INDEX] == LEARNED:
         print(f"You have already learned {song_list[index][0]}")
     else:
-        song_list[index][3] = LEARNED
+        song_list[index][STATUS_INDEX] = LEARNED
         print(f"{song_list[index][0]} by {song_list[index][1]} learned")
 
 
 def main():
-    print("Song List 1.0 - by Your Name\n")
+    """Name: Kyaw Zaww Linn
+    Date started: 18/12/23
+    GitHub URL: https://github.com/kyawzawwlinn/cp1404practicals/tree/master/cp1404-song-list-assignment-1-kyawzawwlinn-master
+
+    Song List 1.0 - by Kyaw Zaww Linn
+    """
+
+    print("Song List 1.0 - by Kyaw Zaww Linn\n")
 
     songs = load_songs()
     print(f"{len(songs)} songs loaded.\n")
